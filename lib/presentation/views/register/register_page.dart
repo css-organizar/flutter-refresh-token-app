@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_api_rest/utils/responsive.dart';
-import 'package:flutter_api_rest/widgets/avatar_button.dart';
-import 'package:flutter_api_rest/widgets/circle.dart';
-import 'package:flutter_api_rest/widgets/register_form.dart';
+
+import '../../../application/commons/utils/responsive.dart';
+import '../../../application/commons/widgets/avatar_button.dart';
+import '../../../application/commons/widgets/circle.dart';
+
+import 'widgets/register_form.dart';
 
 class RegisterPage extends StatefulWidget {
   static const routeName = 'register';
@@ -61,8 +63,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       Text(
                         "Hello!\nSign up to get started.",
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: responsive.dp(1.6), color: Colors.white),
+                        style: TextStyle(fontSize: responsive.dp(1.6), color: Colors.white),
                       ),
                       SizedBox(height: responsive.dp(4.5)),
                       AvatarButton(
