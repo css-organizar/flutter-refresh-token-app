@@ -93,11 +93,11 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             SizedBox(height: 30),
-            FlatButton(
+            TextButton(
               onPressed: _pickImage,
               child: Text("Update avatar"),
             ),
-            FlatButton(
+            TextButton(
               onPressed: _signOut,
               child: Text("Sign Out"),
             ),

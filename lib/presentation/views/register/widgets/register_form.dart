@@ -121,8 +121,10 @@ class _RegisterFormState extends State<RegisterForm> {
               SizedBox(height: responsive.dp(5)),
               SizedBox(
                 width: double.infinity,
-                child: FlatButton(
-                  padding: EdgeInsets.symmetric(vertical: 15),
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.pinkAccent),
+                  ),
                   child: Text(
                     "Sign up",
                     style: TextStyle(
@@ -131,7 +133,6 @@ class _RegisterFormState extends State<RegisterForm> {
                     ),
                   ),
                   onPressed: this._submit,
-                  color: Colors.pinkAccent,
                 ),
               ),
               SizedBox(height: responsive.dp(2)),
@@ -144,7 +145,7 @@ class _RegisterFormState extends State<RegisterForm> {
                       fontSize: responsive.dp(1.5),
                     ),
                   ),
-                  FlatButton(
+                  TextButton(
                     child: Text(
                       "Sign in",
                       style: TextStyle(
