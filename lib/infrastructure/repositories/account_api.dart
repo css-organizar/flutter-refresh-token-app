@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 
 import '../../application/commons/helpers/http.dart';
 import '../../application/commons/helpers/http_response.dart';
-import '../../domain/entities/user.dart';
+import '../../domain/entities/user_entity.dart';
 
 import 'authentication_client.dart';
 
@@ -13,16 +13,16 @@ class AccountAPI {
 
   AccountAPI(this._http, this._authenticationClient);
 
-  Future<HttpResponse<User>> getUserInfo() async {
+  Future<HttpResponse<UserEntity>> getUserInfo() async {
     final token = await _authenticationClient.accessToken;
-    return _http.request<User>(
+    return _http.request<UserEntity>(
       '/api/v1/user-info',
       method: "GET",
       headers: {
         "token": token,
       },
       parser: (data) {
-        return User.fromJson(data);
+        return UserEntity.fromJson(data);
       },
     );
   }

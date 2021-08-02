@@ -5,7 +5,7 @@ import 'package:image_picker/image_picker.dart';
 
 import '../../../../infrastructure/repositories/account_api.dart';
 import '../../../../infrastructure/repositories/authentication_client.dart';
-import '../../../../domain/entities/user.dart';
+import '../../../domain/entities/user_entity.dart';
 
 import '../login/login_page.dart';
 
@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   final _authenticationClient = GetIt.instance<AuthenticationClient>();
   final _accountAPI = GetIt.instance<AccountAPI>();
 
-  User _user;
+  UserEntity _user;
 
   @override
   void initState() {

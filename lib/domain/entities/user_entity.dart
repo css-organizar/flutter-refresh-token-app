@@ -1,7 +1,14 @@
 import 'package:meta/meta.dart' show required;
 
-class User {
-  User({
+class UserEntity {
+  final String id;
+  final String username;
+  final String email;
+  final DateTime createdAt;
+  final DateTime updatedAt;
+  final String avatar;
+
+  UserEntity({
     @required this.id,
     @required this.username,
     @required this.email,
@@ -10,14 +17,7 @@ class User {
     @required this.avatar,
   });
 
-  final String id;
-  final String username;
-  final String email;
-  final DateTime createdAt;
-  final DateTime updatedAt;
-  final String avatar;
-
-  factory User.fromJson(Map<String, dynamic> json) => User(
+  factory UserEntity.fromJson(Map<String, dynamic> json) => UserEntity(
         id: json["_id"],
         username: json["username"],
         email: json["email"],
@@ -35,7 +35,7 @@ class User {
         "avatar": this.avatar,
       };
 
-  User copyWith({
+  UserEntity copyWith({
     String id,
     String username,
     String email,
@@ -43,7 +43,7 @@ class User {
     DateTime createdAt,
     DateTime updatedAt,
   }) =>
-      User(
+      UserEntity(
         id: id ?? this.id,
         username: username ?? this.username,
         email: email ?? this.email,

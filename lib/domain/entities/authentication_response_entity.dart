@@ -1,16 +1,16 @@
 import 'package:meta/meta.dart' show required;
 
-class AuthenticationResponse {
+class AuthenticationResponseEntity {
   final String token;
   final int expiresIn;
 
-  AuthenticationResponse({
+  AuthenticationResponseEntity({
     @required this.token,
     @required this.expiresIn,
   });
 
-  static AuthenticationResponse fromJson(Map<String, dynamic> json) {
-    return AuthenticationResponse(
+  static AuthenticationResponseEntity fromJson(Map<String, dynamic> json) {
+    return AuthenticationResponseEntity(
       token: json['token'],
       expiresIn: json['expiresIn'],
     );

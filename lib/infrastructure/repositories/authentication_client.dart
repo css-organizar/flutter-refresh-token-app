@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-import '../../domain/entities/session.dart';
-import '../../domain/entities/authentication_response.dart';
+import '../../domain/entities/session_entity.dart';
+import '../../domain/entities/authentication_response_entity.dart';
 
 import 'authentication_api.dart';
 
@@ -56,7 +56,7 @@ class AuthenticationClient {
     return null;
   }
 
-  Future<void> saveSession(AuthenticationResponse authenticationResponse) async {
+  Future<void> saveSession(AuthenticationResponseEntity authenticationResponse) async {
     final Session session = Session(
       token: authenticationResponse.token,
       expiresIn: authenticationResponse.expiresIn,
